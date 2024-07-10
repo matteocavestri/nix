@@ -75,7 +75,7 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
 # ------------------ NixPkgs ----------------------------------------
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    nixpkgs.url = "nixpkgs/nios-24.05";
+    nixpkgs.url = "nixpkgs/nixos-24.05";
     nurpkgs.url = "github:nix-community/NUR";
 
 # ------------------ Home Manager -----------------------------------
