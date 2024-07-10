@@ -23,7 +23,7 @@
     ../../user/pkgs/terminal/alacritty.nix # Alacritty config
     ../../user/pkgs/virtualization/virtualization.nix # Virtualization config
     ../../user/pkgs/editors/neve.nix # Neve editor import
-    ../../user/pkgs/editors/neovim.nix # Neovim custom config import
+    #../../user/pkgs/editors/neovim.nix # Neovim custom config import
     ../../user/pkgs/basepkgs/engineering.nix # Engineering pkgs
     ../../user/pkgs/basepkgs/media.nix # Media pkgs
     ../../user/pkgs/basepkgs/productivity.nix # Productivity pkgs
