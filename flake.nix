@@ -1,7 +1,7 @@
 {
   description = "Matteo Cavestri NixOS config and personal dotfiles";
 
-  outputs = { nixpkgs, nixpkgs-unstable, nixos-hardware, home-manager, self, ... }@inputs: 
+  outputs = { nixpkgs, nixpkgs-unstable, nixos-hardware, home-manager, stylix, self, ... }@inputs: 
     let
 # -------------------- SYSTEM SETTINGS ------------------------------
       systemSettings = {
@@ -36,6 +36,7 @@
 # -------------------------------------------------------------------
       lib = nixpkgs.lib;
       pkgs = import nixpkgs { system = systemSettings.system; };
+      pkgs-unstable = import nixpkgs-unstable { system = systemSettings.system; };
     in {
 # -------------------- NixOS Configuration --------------------------
     nixosConfigurations = {
@@ -49,6 +50,7 @@
           inherit systemSettings;
           inherit userSettings;
           inherit inputs;
+          inherit pkgs-unstable;
         };
       };
     };
@@ -64,6 +66,7 @@
           inherit userSettings;
           inherit systemSettings;
           inherit inputs;
+          inherit pkgs-unstable;
         };
       };
     };
@@ -81,8 +84,6 @@
 # ------------------ Home Manager -----------------------------------
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager-unstable.url = "github:nix-community/home-manager/master";
-    home-manager-unstable.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
 # ------------------ Hyprland ---------------------------------------
     hyprland = {
